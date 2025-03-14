@@ -1,7 +1,5 @@
-N, X = map(int,input().split()) 
-(1 <= N, X <= 10,000)
+N, X=map(int, input().split(" "))
 
-for _ in range(N):
-    
+for i in range(1,N):
 
 
