@@ -1,5 +1,8 @@
-N, X=map(int, input().split(" "))
+N, X = map(int, input().split(' '))
 
-for i in range(1,N):
-
+A=input()
+B=A.split(' ')
+for i in range(len(B)):
+    if int(B[i]) < X :
+        print(B[i],end=' ')
 
