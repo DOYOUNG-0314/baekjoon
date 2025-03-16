@@ -1,4 +1,12 @@
-a=list()
-n=몇개
-for i in range(n+1)
-    result=a[i]+
+def solve(a):
+    
+
+    result=0
+    for i in range (len(a)):
+        
+        result+=a[i]
+    
+
+    return result
+
+
