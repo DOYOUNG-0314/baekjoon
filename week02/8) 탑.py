@@ -2,18 +2,18 @@ import sys
 input = sys.stdin.readline
 
 N = int(input())
+top = list(map(int, input().split()))
 
-top = list(map(int, sys.stdin.readline().split()))
+stack = []
+top_num = []
 
-height = 0
-top_num = 0
-for h in reversed(top):
-    if h > height:
-        
-        top_num.add(h)
-        height = h
+for i in range(1, N):  # 1번 인덱스부터 시작
+    while stack and top[stack[-1]] < top[i]:
+        stack.pop()
+    if stack:
+        top_num.append(stack[-1] + 1)
+    else:
+        top_num.append(0)
+    stack.append(i)
 
-height = 0
-top_num[0] = 0
-
-print(*top_num)
+print(0, *top_num)
