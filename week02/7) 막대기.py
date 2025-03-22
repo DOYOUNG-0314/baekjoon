@@ -14,4 +14,4 @@ for h in reversed(stick):
         height = h
 
 print(len(visible))
-#####
+#######
