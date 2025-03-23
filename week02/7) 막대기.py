@@ -1,4 +1,5 @@
 import sys
+
 input = sys.stdin.readline
 
 N = int(input())
@@ -14,4 +15,3 @@ for h in reversed(stick):
         height = h
 
 print(len(visible))
-#######
