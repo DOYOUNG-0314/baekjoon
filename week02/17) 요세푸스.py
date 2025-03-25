@@ -1,16 +1,10 @@
-from collections import deque
-
-count = 0
-queue = deque()
-N, K = map(int,input().split())
-for i in range(0,N):
-    queue.append(i+1)
-
+N, K = map(int, input().split())
+queue = list(range(1, N + 1))
 result = []
+count = 0
 
 while queue:
-    count = (count + K -1)% len(queue)
-    result.append(queue[count])
-    queue.remove(queue[count])
+    count = (count + K - 1) % len(queue)
+    result.append(queue.pop(count))  
 
-print("<", ", ".join(map(str,result)), ">")
+print("<" + ", ".join(map(str, result)) + ">")
