@@ -5,7 +5,7 @@ N = int(input())
 arr = list(map(int,input().split()))
 arr.sort()
 
-min_sum = float('inf')
+min_sum = float('inf') 
 answer = (0, 0)
 
 for i in range(N-1):
