@@ -12,7 +12,7 @@ while count < K:
     stack.pop()
     count += 1
 
-print(*stack)
+print(''.join(stack))
 
 
     
