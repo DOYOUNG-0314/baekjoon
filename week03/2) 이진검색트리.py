@@ -6,7 +6,7 @@ input=sys.stdin.read
 preorder = list(map(int,input().split()))
 
 idx = 0
-
+####
 class Node:
     def __init__ (self, val):
         self.val = val
