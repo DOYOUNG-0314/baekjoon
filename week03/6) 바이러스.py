@@ -1,28 +1,26 @@
 import sys
-sys.setrecursionlimit(1000)
-input = sys.stdin.readline
+sys.stdin.readline()
 
-n = int(input())  # 컴퓨터 수
-m = int(input())  # 연결된 쌍 수
+def dfs(c):
+    global ans
 
-graph = [[] for _ in range(n + 1)]
-visited = [False] * (n + 1)
+    ans += 1
+    v[c]=1
 
-# 간선 입력
-for _ in range(m):
-    a, b = map(int, input().split())
-    graph[a].append(b)
-    graph[b].append(a)
+    for n in adj[c]:
+        if not v[n]:
+            dfs(n)
 
-count = 0
+N = int(input())
+M = int(input())
+adj = [[] for _ in range(N+1)]
 
-def dfs(v):
-    global count
-    visited[v] = True
-    for neighbor in graph[v]:
-        if not visited[neighbor]:
-            count += 1
-            dfs(neighbor)
+for _ in range(M):
+    s,e = map(int. input().split())
+    adj[s].append(e)
+    adj[e].append(s)
 
-dfs(1)
-print(count)
+    ans=0
+    v = [0]*(N+1)
+    dfs(1)
+    print(ans-1)
