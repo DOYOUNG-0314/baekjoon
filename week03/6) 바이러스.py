@@ -1,26 +1,25 @@
-import sys
-sys.stdin.readline()
+T = int(input())
+E=int(input())
+parent=[i for i in range(T+1)]
+def find(a):
+    if a!=parent[a]:
+        parent[a]=find(parent[a])
+    return parent[a]
+def union(a,b):
+    parent_a=find(a)
+    parent_b=find(b)
+    if parent_a!=parent_b:
+        for i in range(1,T+1):
+            if parent[i]==parent_b:
+                parent[i]=parent_a
+        
+for _ in range(E):
+    a,b=sorted(map(int, input().split()))
+    union(a,b)
 
-def dfs(c):
-    global ans
+count=0
 
-    ans += 1
-    v[c]=1
-
-    for n in adj[c]:
-        if not v[n]:
-            dfs(n)
-
-N = int(input())
-M = int(input())
-adj = [[] for _ in range(N+1)]
-
-for _ in range(M):
-    s,e = map(int. input().split())
-    adj[s].append(e)
-    adj[e].append(s)
-
-    ans=0
-    v = [0]*(N+1)
-    dfs(1)
-    print(ans-1)
+for i in range(1, T+1):
+    if parent[i]==parent[1]:
+        count+=1
+print(count-1)
